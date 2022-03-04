@@ -7,11 +7,6 @@ import Input from "../Input/Input";
 import Detalle from "./Detalle";
 import FormDataProvider from "../../context/ContextoFormulario";
 
-// En este componente tenemos nuestro formulario y dentro de él
-// tenemos los componentes que necesitan consumir nuestro estado.
-// Recuerda cual es el paso que debemos tomar para que nuestros
-// componentes puedan consumir un estado global.
-
 const Formulario = () => {
   return (
     <>
@@ -31,10 +26,6 @@ const Formulario = () => {
           pokémon
         </p>
         <div className="cuerpo-formulario">
-          {/*
-           Si tan solo tuviesemos una manera de "encapsular" nuestros componentes
-           para que puedan acceder al estado global.
-          */}
           <FormDataProvider>
             <div className="inputs">
               <div>
@@ -52,6 +43,10 @@ const Formulario = () => {
                   <span>POKEMON</span>
                 </p>
                 <Input name="nombrePokemon" label="Nombre" />
+                <Input name="tipoPokemon" label="Tipo" />
+                <Input name="elementoPokemon" label="Elemento" />
+                <Input name="alturaPokemon" label="Altura" type="number" />
+                <Input name="edadPokemon" label="Edad" type="number" />
               </div>
             </div>
             <Detalle />

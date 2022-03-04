@@ -2,12 +2,9 @@ import React from "react";
 import { FormDataContext } from "../../context/ContextoFormulario";
 
 const Detalle = () => {
-  // Aqui deberíamos obtener los datos del formulario para poder mostrarlo en
-  // la vista previa.
-
   return (
     <FormDataContext.Consumer>
-      {({ formData }) => (
+      {({ state }) => (
         <div className="detalle-formulario">
           <div className="encabezado">
             <h3>Vista Previa de la Solicitud</h3>
@@ -15,15 +12,19 @@ const Detalle = () => {
           <section className="datos-cliente">
             <h4>Datos del Entrenador</h4>
             <div className="fila">
-              <p>Nombre: {formData.nombre}</p>
-              <p>Apellido: {formData.apellido}</p>
-              <p>Email: {formData.email}</p>
+              <p>Nombre: {state.nombre}</p>
+              <p>Apellido: {state.apellido}</p>
+              <p>Email: {state.email}</p>
             </div>
           </section>
           <section className="datos-cliente">
             <h4>Datos del Pokémon</h4>
             <div className="fila">
-              <p>Nombre: {formData.nombrePokemon}</p>
+              <p>Nombre: {state.nombrePokemon}</p>
+              <p>Tipo: {state.tipoPokemon}</p>
+              <p>Elemento: {state.elementoPokemon}</p>
+              <p>Altura en cm: {state.alturaPokemon}</p>
+              <p>Edad: {state.edadPokemon}</p>
             </div>
           </section>
           <button

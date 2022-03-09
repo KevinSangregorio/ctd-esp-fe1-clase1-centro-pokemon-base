@@ -1,6 +1,13 @@
 import React, { useState, useContext } from "react";
 import { FormDataContext } from "../../context/ContextoFormulario";
 
+/**
+ * Componente que renderiza un input reutilizable.
+ *
+ * Recibe como props: name, label y type que si no es definido se asigna "text" como default
+ *
+ * @returns {component}
+ */
 const Input = ({ name, label, type = "text" }) => {
   const { handleInputBlur } = useContext(FormDataContext);
 
@@ -8,6 +15,13 @@ const Input = ({ name, label, type = "text" }) => {
 
   const onChange = (e) => setFieldValue(e.target.value);
 
+  /**
+   * Función que se encarga de enviar datos al estado global (handleInputBlur) en el evento onBlur
+   * 
+   * Depende del value de la prop name se asigna un type u otro para el reducer del ContextoFormulario.
+   *
+   * @returns nothing
+   */
   const onBlur = (e) => {
     e.preventDefault();
 

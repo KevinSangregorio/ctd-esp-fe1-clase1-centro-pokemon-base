@@ -1,4 +1,3 @@
-// Aqui debemos crear nuestro contexto y nuestro provider.
 import { createContext, useState, useReducer } from "react";
 
 export const FormDataContext = createContext();

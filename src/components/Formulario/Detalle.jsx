@@ -1,6 +1,13 @@
 import React from "react";
 import { FormDataContext } from "../../context/ContextoFormulario";
 
+/**
+ * Componente que renderiza la vista previa de la solicitud en la parte derecha (url: http://localhost:3000/formularioIngreso)
+ *
+ * Consume el contexto de FormDataContext mediante el método .Consumer para poder acceder al estado global (state)
+ *
+ * @returns {component}
+ */
 const Detalle = () => {
   return (
     <FormDataContext.Consumer>

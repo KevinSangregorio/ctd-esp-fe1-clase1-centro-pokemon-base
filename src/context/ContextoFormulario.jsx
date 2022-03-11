@@ -1,4 +1,4 @@
-import { createContext, useState, useReducer } from "react";
+import { createContext, useReducer } from "react";
 
 export const FormDataContext = createContext();
 
@@ -9,8 +9,8 @@ const initialState = {
   nombrePokemon: "",
   tipoPokemon: "",
   elementoPokemon: "",
-  alturaPokemon: "",
-  edadPokemon: "",
+  alturaPokemon: null,
+  edadPokemon: null,
 };
 
 const reducer = (state, action) => {

@@ -17,7 +17,7 @@ const Input = ({ name, label, type = "text" }) => {
 
   /**
    * Función que se encarga de enviar datos al estado global (handleInputBlur) en el evento onBlur
-   * 
+   *
    * Depende del value de la prop name se asigna un type u otro para el reducer del ContextoFormulario.
    *
    * @returns nothing

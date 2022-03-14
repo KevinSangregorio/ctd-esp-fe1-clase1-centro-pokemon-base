@@ -9,7 +9,7 @@ function App() {
   const queryClient = new QueryClient();
 
   return (
-    <QueryClientProvider cliente={queryClient}>
+    <QueryClientProvider client={queryClient}> 
       <FormDataProvider>
         <div className="App">
           <Routes>

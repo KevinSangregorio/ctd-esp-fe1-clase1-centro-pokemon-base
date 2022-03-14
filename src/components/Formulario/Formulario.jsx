@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import pokebola from "../../assets/pokebola.png";
 import entrenador from "../../assets/entrenador.png";
@@ -15,6 +15,7 @@ import { FormDataContext } from "../../context/ContextoFormulario";
  * @returns {component}
  */
 const Formulario = () => {
+
   return (
     <FormDataContext.Consumer>
       {({ state }) => (

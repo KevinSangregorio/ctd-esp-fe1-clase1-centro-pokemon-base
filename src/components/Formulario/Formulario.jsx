@@ -10,7 +10,7 @@ import { FormDataContext } from "../../context/ContextoFormulario";
 /**
  * Componente que renderiza el header,  formulario donde se completan los datos para la solicitud de atención (url: http://localhost:3000/formularioIngreso)
  *
- * Se utiliza el provider para poder darle acceso al estado global a los componentes contenidos como Detalle e Input
+ * Se consume el contexto mediante el hook useContext.
  *
  * @returns {component}
  */

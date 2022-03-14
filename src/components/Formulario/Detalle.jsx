@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 /**
  * Componente que renderiza la vista previa de la solicitud en la parte derecha (url: http://localhost:3000/formularioIngreso)
  *
- * Consume el contexto de FormDataContext mediante el método .Consumer para poder acceder al estado global (state)
+ * Recibe el state del contexto mediante props
  *
  * @returns {component}
  */

@@ -6,6 +6,8 @@ import pikachu from "../../assets/pikachu.png";
 import Input from "../Input/Input";
 import Detalle from "./Detalle";
 import { FormDataContext } from "../../context/ContextoFormulario";
+import { useQuery } from "react-query";
+import obtenerTipoPokemones from "../../services/tipoPokemones";
 
 /**
  * Componente que renderiza el header,  formulario donde se completan los datos para la solicitud de atención (url: http://localhost:3000/formularioIngreso)
@@ -17,6 +19,15 @@ import { FormDataContext } from "../../context/ContextoFormulario";
 const Formulario = () => {
   const { state } = useContext(FormDataContext);
 
+  //const tiposPokemones = ["agua", "tierra", "fuego", "aire"];
+
+  const {
+    data: tiposPokemones,
+    isLoading,
+    error,
+  } = useQuery("getPokemones", obtenerTipoPokemones);
+
+  
   return (
     <>
       <header className="form-header">
@@ -51,7 +62,29 @@ const Formulario = () => {
                 <span>POKEMON</span>
               </p>
               <Input name="nombrePokemon" label="Nombre" />
-              <Input name="tipoPokemon" label="Tipo" />
+
+              <div className="input-contenedor">
+                <label htmlFor="tipoPokemon">Tipo</label>
+                <select name="tipoPokemon" id="tipoPokemon">
+                  {!isLoading && !error ? (
+                    tiposPokemones.results.map((tipoPokemon, index) => {
+                      return (
+                        <option
+                          key={tipoPokemon.name + index}
+                          value={tipoPokemon.name}
+                        >
+                          {tipoPokemon.name}
+                        </option>
+                      );
+                    })
+                  ) : (
+                    <option value="No results" disabled>
+                      No hay resultados
+                    </option>
+                  )}
+                </select>
+              </div>
+
               <Input name="elementoPokemon" label="Elemento" />
               <Input name="alturaPokemon" label="Altura" type="number" />
               <Input name="edadPokemon" label="Edad" type="number" />
